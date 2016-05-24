@@ -33,5 +33,16 @@
     "mocha": "^2.5.1",
     "phantomjs-prebuilt": "^2.1.7",
     "watchify": "^3.7.0"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viridia/certainty-dom.git"
+  },
+  "bugs": {
+    "url": "https://github.com/viridia/certainty-dom/issues"
+  },
+  "homepage": "https://github.com/viridia/certainty-dom#readme"
 }
