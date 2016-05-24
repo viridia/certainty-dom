@@ -1,0 +1,19 @@
+{
+  "opts": {
+    "readme": "README.md",
+    "package": "package.json",
+    "destination": "./doc/",
+    "recurse": true,
+    "template": "./node_modules/minami"
+  },
+  "source": {
+    "include": [ "lib", "index.js" ],
+    "includePattern": ".+\\.js(doc)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  }
+}
