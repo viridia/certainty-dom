@@ -65,4 +65,11 @@ describe('ensure.element', function () {
     assertThrows(function () { ensure(el.firstElementChild).doesNotHaveClass('test-class'); },
       "Expected [object HTMLSpanElement] to not have class 'test-class'.");
   });
+
+  it('.eachChildElement', function () {
+    ensure(el).eachChildElement().hasTagName('span');
+    assertThrows(function () { ensure(el).eachChildElement().hasTagName('i'); },
+      "Expected child 0 of [object HTMLDivElement] to have a tag name of 'I', " +
+      "actual tag name was 'SPAN'.");
+  });
 });

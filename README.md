@@ -9,7 +9,7 @@ Example:
 
 ```javascript
 import { ensure } from 'certainty';
-import `certainty-dom`;
+import 'certainty-dom';
 
 // Assert that the body element has the expected tag name.
 ensure(document.body).hasTagName('body');
@@ -25,4 +25,7 @@ ensure(someElement).hasDescendantMatching(query); // uses querySelector()
 ensure(someElement).hasAttribute(attrName).withValue(value);
 ensure(someElement).hasClass(clsName);
 ensure(someElement).doesNotHaveClass(clsName);
+
+// Apply an assertion to all child elements.
+ensure(someElement).eachChildElement().hasTagName(tagName);
 ```
