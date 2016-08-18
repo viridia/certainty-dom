@@ -1,4 +1,4 @@
-# Certainty-DOM
+# Certainty-DOM ![](https://travis-ci.org/viridia/certainty-dom.svg?branch=master)
 
 ## Introduction
 
