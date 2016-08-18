@@ -29,7 +29,7 @@ describe('ensure.element', function () {
   it('.hasChildCount', function () {
     ensure(el).hasChildCount(1);
     assertThrows(function () { ensure(el).hasChildCount(0); },
-      "Expected [object HTMLDivElement] to have 0 children, actual number was 1.");
+      "Expected <div> to have 0 children, actual number was 1.");
   });
 
   it('.hasDescendantMatching', function () {
@@ -38,18 +38,20 @@ describe('ensure.element', function () {
     ensure(el).hasDescendantMatching('.test-class');
     ensure(el).hasDescendantMatching('.test-class.other-class');
     assertThrows(function () { ensure(el).hasDescendantMatching('div'); },
-      "Expected [object HTMLDivElement] to have a descendant matching the query 'div'.");
+      "Expected <div> to have a descendant matching the query 'div'.");
     assertThrows(function () { ensure(el).hasDescendantMatching('.absent'); },
-      "Expected [object HTMLDivElement] to have a descendant matching the query '.absent'.");
+      "Expected <div> to have a descendant matching the query '.absent'.");
   });
 
   it('.hasAttribute', function () {
     ensure(el.firstElementChild).hasAttribute('id');
     ensure(el.firstElementChild).hasAttribute('id').withValue('0');
     assertThrows(function () { ensure(el.firstElementChild).hasAttribute('invalid'); },
-      "Expected [object HTMLSpanElement] to have an attribute named 'invalid'.");
+      "Expected <span id=\"0\" class=\"test-class other-class\"> " +
+      "to have an attribute named 'invalid'.");
     assertThrows(function () { ensure(el.firstElementChild).hasAttribute('id').withValue('2'); },
-      "Expected [object HTMLSpanElement] to have an attribute 'id' with value \"2\", " +
+      "Expected <span id=\"0\" class=\"test-class other-class\"> " +
+      "to have an attribute 'id' with value \"2\", " +
       "actual value was \"0\".");
   });
 
@@ -57,19 +59,19 @@ describe('ensure.element', function () {
     ensure(el.firstElementChild).hasClass('test-class');
     ensure(el.firstElementChild).hasClass('other-class');
     assertThrows(function () { ensure(el.firstElementChild).hasClass('invalid'); },
-      "Expected [object HTMLSpanElement] to have class 'invalid'.");
+      "Expected <span id=\"0\" class=\"test-class other-class\"> to have class 'invalid'.");
   });
 
   it('.doesNotHaveClass', function () {
     ensure(el.firstElementChild).doesNotHaveClass('invalid');
     assertThrows(function () { ensure(el.firstElementChild).doesNotHaveClass('test-class'); },
-      "Expected [object HTMLSpanElement] to not have class 'test-class'.");
+      "Expected <span id=\"0\" class=\"test-class other-class\"> to not have class 'test-class'.");
   });
 
   it('.eachChildElement', function () {
     ensure(el).eachChildElement().hasTagName('span');
     assertThrows(function () { ensure(el).eachChildElement().hasTagName('i'); },
-      "Expected child 0 of [object HTMLDivElement] to have a tag name of 'I', " +
+      "Expected child 0 of <div> to have a tag name of 'I', " +
       "actual tag name was 'SPAN'.");
   });
 });
