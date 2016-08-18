@@ -4,7 +4,8 @@
   "description": "Extends the Certainty assertion framework with DOM-specific assertions.",
   "main": "index.js",
   "scripts": {
-    "test": "karma start --single-run"
+    "test": "karma start --single-run",
+    "test-travis": "karma start --single-run --browsers Firefox,PhantomJS"
   },
   "keywords": [
     "test",
